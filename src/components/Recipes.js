@@ -10,7 +10,7 @@ return (
             key={i} 
             name={recipe.name} 
             ingredients={recipe.ingredients} 
-            expanded='true' 
+            visible={recipe.visible} 
             {...props}
           />
         )

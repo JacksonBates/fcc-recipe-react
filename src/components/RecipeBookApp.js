@@ -6,14 +6,15 @@ export default class RecipeBookApp extends React.Component {
     recipes: [
       {
         name: 'Chilli',
-        ingredients: 'brown rice, minced beef, onions, chilli powder, jalapenos, too much cumin, cocoa powder (trust me), kidney beans, corn, sour cream, cerveza'
+        ingredients: 'brown rice, minced beef, onions, chilli powder, jalapenos, too much cumin, cocoa powder (trust me), kidney beans, corn, sour cream, cerveza',
+        visible: false
       },
       {
         name: 'Mashed Potatoes',
-        ingredients: 'Large brushed sebagos, full cream, extra virgin olive oil, butter, black pepper'
+        ingredients: 'Large brushed sebagos, full cream, extra virgin olive oil, butter, black pepper',
+        visible: false
       }
-    ],
-    visibleRecipe: undefined
+    ]
   }
   handleAdd() {
     alert('Edit button clicked');

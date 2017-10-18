@@ -10,7 +10,7 @@ return (
         {props.name}
       </button>
       <br />
-      {props.visibleRecipe == props.name && props.ingredients}
+      {props.visible && props.ingredients}
     </div>
   )
 }

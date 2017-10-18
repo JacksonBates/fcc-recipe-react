@@ -6,8 +6,15 @@ return (
     <div>
       {props.recipes.map((recipe, i) => {
         return (
-          <Recipe key={i} name={recipe.name} ingredients={recipe.ingredients} expanded='true' {...props}/>
-      )})}
+          <Recipe 
+            key={i} 
+            name={recipe.name} 
+            ingredients={recipe.ingredients} 
+            expanded='true' 
+            {...props}
+          />
+        )
+      })}
     </div>
   )
 }

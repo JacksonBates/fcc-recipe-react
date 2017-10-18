@@ -15,7 +15,7 @@ export default class RecipeBookApp extends React.Component {
     ],
     visibleRecipe: undefined
   }
-  handleEdit() {
+  handleAdd() {
     alert('Edit button clicked');
   }
   handleVisibility() {
@@ -24,8 +24,16 @@ export default class RecipeBookApp extends React.Component {
   render() {
     return (
       <div>
-        <Recipes {...this.state} handleVisibility={this.handleVisibility} />
-        <button name='edit-recipes' onClick={this.handleEdit}>Edit</button>
+        <Recipes 
+          {...this.state} 
+          handleVisibility={this.handleVisibility} 
+        />
+        <button 
+          name='add-recipe' 
+          onClick={this.handleAdd}
+        >
+          Add Recipe
+        </button>
       </div>
     )
   }

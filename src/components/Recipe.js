@@ -3,9 +3,14 @@ import React from 'react';
 const Recipe = (props) => {
 return (
     <div>
-      <button name={props.name} onClick={props.handleVisibility}>{props.name}</button>
+      <button 
+        name={props.name} 
+        onClick={props.handleVisibility}
+      >
+        {props.name}
+      </button>
       <br />
-      {props.expanded === 'true' && props.ingredients}
+      {props.visibleRecipe == props.name && props.ingredients}
     </div>
   )
 }

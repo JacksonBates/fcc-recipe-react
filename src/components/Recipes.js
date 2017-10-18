@@ -7,7 +7,8 @@ return (
       {props.recipes.map((recipe, i) => {
         return (
           <Recipe 
-            key={i} 
+            key={i}
+            index={i} 
             name={recipe.name} 
             ingredients={recipe.ingredients} 
             visible={recipe.visible} 

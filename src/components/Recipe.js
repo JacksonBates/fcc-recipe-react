@@ -4,8 +4,12 @@ const Recipe = (props) => {
 return (
     <div>
       <button 
+        // key={props.key}
+        // index={props.key}
         name={props.name} 
-        onClick={props.handleVisibility}
+        onClick={(e) => {
+          props.handleVisibility(props.index)
+        }}
       >
         {props.name}
       </button>

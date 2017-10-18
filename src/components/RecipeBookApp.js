@@ -16,11 +16,18 @@ export default class RecipeBookApp extends React.Component {
       }
     ]
   }
-  handleAdd() {
+  handleAdd = () => {
     alert('Edit button clicked');
   }
-  handleVisibility() {
-    alert('Will toggle visibility');
+  handleVisibility = (key) => {
+    // Creates a copy of the state object to work on
+    // then sets the copy as the new state
+    // modified from: https://stackoverflow.com/questions/35174489/reactjs-setstate-of-object-key-in-array
+    const stateCopy = Object.assign({}, this.state);
+    stateCopy.recipes = stateCopy.recipes.slice();
+    stateCopy.recipes[key] = Object.assign({}, stateCopy.recipes[key]);
+    stateCopy.recipes[key].visible = !stateCopy.recipes[key].visible;
+    this.setState(() => (stateCopy));
   }
   render() {
     return (

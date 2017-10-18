@@ -12,15 +12,19 @@ export default class RecipeBookApp extends React.Component {
         name: 'Mashed Potatoes',
         ingredients: 'Large brushed sebagos, full cream, extra virgin olive oil, butter, black pepper'
       }
-    ]
+    ],
+    visibleRecipe: undefined
   }
   handleEdit() {
     alert('Edit button clicked');
   }
+  handleVisibility() {
+    alert('Will toggle visibility');
+  }
   render() {
     return (
       <div>
-        <Recipes {...this.state} />
+        <Recipes {...this.state} handleVisibility={this.handleVisibility} />
         <button name='edit-recipes' onClick={this.handleEdit}>Edit</button>
       </div>
     )

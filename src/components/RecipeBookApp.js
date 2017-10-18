@@ -25,6 +25,13 @@ export default class RecipeBookApp extends React.Component {
     // modified from: https://stackoverflow.com/questions/35174489/reactjs-setstate-of-object-key-in-array
     const stateCopy = Object.assign({}, this.state);
     stateCopy.recipes = stateCopy.recipes.slice();
+    // resets all visibility, except for the target recipe
+    stateCopy.recipes.forEach((recipe) => {
+      if (recipe.name !== stateCopy.recipes[key].name) {
+        recipe.visible = false;
+      }
+    });
+    // Toggles the visibility of the target recipe
     stateCopy.recipes[key] = Object.assign({}, stateCopy.recipes[key]);
     stateCopy.recipes[key].visible = !stateCopy.recipes[key].visible;
     this.setState(() => (stateCopy));

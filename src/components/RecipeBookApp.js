@@ -25,6 +25,24 @@ export default class RecipeBookApp extends React.Component {
   handleCloseAdd = () => {
     this.setState(() => ({ addModalOpen: false }));
   }
+  addRecipe = (e) => {
+    e.preventDefault();
+    
+    const name = e.target.elements.recipeInput.value.trim();
+    const ingredients = e.target.elements.ingredientsInput.value.trim();
+    
+    const recipe = {
+      name, 
+      ingredients,
+      visible: false
+    }
+
+    const stateCopy = Object.assign({}, this.state);
+    stateCopy.recipes = stateCopy.recipes.slice();
+    stateCopy.recipes.push(recipe);
+    stateCopy.addModalOpen = false;
+    this.setState(() => (stateCopy))
+  }
   handleVisibility = (key) => {
     // Creates a copy of the state object to work on
     // then sets the copy as the new state
@@ -55,7 +73,11 @@ export default class RecipeBookApp extends React.Component {
         >
           Add Recipe
         </button>
-        <AddRecipeModal {...this.state} handleCloseAdd={this.handleCloseAdd} />
+        <AddRecipeModal 
+          {...this.state} 
+          handleCloseAdd={this.handleCloseAdd}
+          addRecipe={this.addRecipe}
+        />
       </div>
     )
   }

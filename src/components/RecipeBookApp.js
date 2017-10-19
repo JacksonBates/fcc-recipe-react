@@ -1,8 +1,11 @@
 import React from 'react';
 import Recipes from './Recipes';
+import AddRecipeModal from './AddRecipeModal';
+
 
 export default class RecipeBookApp extends React.Component {
   state = {
+    addModalOpen: false,
     recipes: [
       {
         name: 'Chilli',
@@ -17,7 +20,10 @@ export default class RecipeBookApp extends React.Component {
     ]
   }
   handleAdd = () => {
-    alert('Edit button clicked');
+    this.setState(() => ({ addModalOpen: true }));
+  }
+  handleCloseAdd = () => {
+    this.setState(() => ({ addModalOpen: false }));
   }
   handleVisibility = (key) => {
     // Creates a copy of the state object to work on
@@ -49,6 +55,7 @@ export default class RecipeBookApp extends React.Component {
         >
           Add Recipe
         </button>
+        <AddRecipeModal {...this.state} handleCloseAdd={this.handleCloseAdd} />
       </div>
     )
   }

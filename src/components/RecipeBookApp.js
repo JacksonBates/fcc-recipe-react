@@ -60,12 +60,18 @@ export default class RecipeBookApp extends React.Component {
     stateCopy.recipes[key].visible = !stateCopy.recipes[key].visible;
     this.setState(() => (stateCopy));
   }
+  handleDeleteRecipe = (index) => {
+    const stateCopy = Object.assign({}, this.state);
+    stateCopy.recipes.splice(index, 1);
+    this.setState(() => (stateCopy));
+  }
   render() {
     return (
       <div>
         <Recipes 
           {...this.state} 
-          handleVisibility={this.handleVisibility} 
+          handleVisibility={this.handleVisibility}
+          handleDeleteRecipe={this.handleDeleteRecipe}
         />
         <button 
           name='add-recipe' 

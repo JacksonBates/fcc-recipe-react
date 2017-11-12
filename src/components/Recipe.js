@@ -1,4 +1,5 @@
 import React from 'react';
+import DeleteRecipe from './DeleteRecipe';
 
 const Recipe = (props) => {
 return (
@@ -15,6 +16,7 @@ return (
       </button>
       <br />
       {props.visible && props.ingredients}
+      {props.visible && <DeleteRecipe {...props} />}
     </div>
   )
 }

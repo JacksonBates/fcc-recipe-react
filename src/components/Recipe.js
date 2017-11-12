@@ -1,4 +1,5 @@
 import React from 'react';
+import EditRecipe from './EditRecipe';
 import DeleteRecipe from './DeleteRecipe';
 
 const Recipe = (props) => {
@@ -16,6 +17,7 @@ return (
       </button>
       <br />
       {props.visible && props.ingredients}
+      {props.visible && <EditRecipe {...props} />}      
       {props.visible && <DeleteRecipe {...props} />}
     </div>
   )

@@ -1,11 +1,12 @@
 import React from 'react';
 import Recipes from './Recipes';
 import AddRecipeModal from './AddRecipeModal';
-
+import EditRecipeModal from './EditRecipeModal';
 
 export default class RecipeBookApp extends React.Component {
   state = {
     addModalOpen: false,
+    editModalOpen: false,
     recipes: [
       {
         name: 'Chilli',
@@ -43,6 +44,12 @@ export default class RecipeBookApp extends React.Component {
     stateCopy.addModalOpen = false;
     this.setState(() => (stateCopy))
   }
+  openEditRecipeModal = () => {
+    this.setState(() => ({ editModalOpen: true }));
+  }
+  handleCloseEditModal = () => {
+    this.setState(() => ({ editModalOpen: false }));
+  }
   handleVisibility = (key) => {
     // Creates a copy of the state object to work on
     // then sets the copy as the new state
@@ -65,13 +72,19 @@ export default class RecipeBookApp extends React.Component {
     stateCopy.recipes.splice(index, 1);
     this.setState(() => (stateCopy));
   }
+  handleEditRecipe = (e) => {
+    // do stuff
+
+  }
   render() {
     return (
       <div>
         <Recipes 
           {...this.state} 
           handleVisibility={this.handleVisibility}
+          handleEditRecipe={this.handleEditRecipe}
           handleDeleteRecipe={this.handleDeleteRecipe}
+          openEditRecipeModal={this.openEditRecipeModal}
         />
         <button 
           name='add-recipe' 
@@ -83,6 +96,11 @@ export default class RecipeBookApp extends React.Component {
           {...this.state} 
           handleCloseAdd={this.handleCloseAdd}
           addRecipe={this.addRecipe}
+        />
+        <EditRecipeModal
+          {...this.state}
+          handleCloseEditModal={this.handleCloseEditModal}
+          openEditRecipeModal={this.openEditRecipeModal}
         />
       </div>
     )

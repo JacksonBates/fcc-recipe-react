@@ -1,13 +1,12 @@
 import React from 'react';
 import EditRecipe from './EditRecipe';
 import DeleteRecipe from './DeleteRecipe';
+import EditRecipeModal from './EditRecipeModal';
 
 const Recipe = (props) => {
 return (
     <div>
       <button 
-        // key={props.key}
-        // index={props.key}
         name={props.name} 
         onClick={(e) => {
           props.handleVisibility(props.index)
@@ -19,6 +18,9 @@ return (
       {props.visible && props.ingredients}
       {props.visible && <EditRecipe {...props} />}      
       {props.visible && <DeleteRecipe {...props} />}
+      <EditRecipeModal
+        {...props}
+    />
     </div>
   )
 }

@@ -4,9 +4,10 @@ const EditRecipe = (props) => {
   return (
       <div>
         <button
-          onClick={(e) =>
-            props.openEditRecipeModal(e)
+          onClick={(e) => {
+            props.openEditRecipeModal(props.index);
           }
+        }
         >
           Edit
         </button>

@@ -6,17 +6,18 @@ import EditRecipeModal from './EditRecipeModal';
 export default class RecipeBookApp extends React.Component {
   state = {
     addModalOpen: false,
-    editModalOpen: false,
     recipes: [
       {
         name: 'Chilli',
         ingredients: 'brown rice, minced beef, onions, chilli powder, jalapenos, too much cumin, cocoa powder (trust me), kidney beans, corn, sour cream, cerveza',
-        visible: false
+        visible: false,
+        editModalOpen: false
       },
       {
         name: 'Mashed Potatoes',
         ingredients: 'Large brushed sebagos, full cream, extra virgin olive oil, butter, black pepper',
-        visible: false
+        visible: false,
+        editModalOpen: false
       }
     ]
   }
@@ -44,11 +45,17 @@ export default class RecipeBookApp extends React.Component {
     stateCopy.addModalOpen = false;
     this.setState(() => (stateCopy))
   }
-  openEditRecipeModal = () => {
-    this.setState(() => ({ editModalOpen: true }));
+  openEditRecipeModal = (index) => {
+    const stateCopy = Object.assign({}, this.state);
+    stateCopy.recipes = stateCopy.recipes.slice();
+    stateCopy.recipes[index].editModalOpen = true;
+    this.setState(() => stateCopy);
   }
-  handleCloseEditModal = () => {
-    this.setState(() => ({ editModalOpen: false }));
+  handleCloseEditModal = (index) => {
+    const stateCopy = Object.assign({}, this.state);
+    stateCopy.recipes = stateCopy.recipes.slice();
+    stateCopy.recipes.forEach((recipe) => {recipe.editModalOpen = false});
+    this.setState(() => stateCopy);
   }
   handleVisibility = (key) => {
     // Creates a copy of the state object to work on
@@ -73,7 +80,26 @@ export default class RecipeBookApp extends React.Component {
     this.setState(() => (stateCopy));
   }
   handleEditRecipe = (e) => {
-    // do stuff
+    e.preventDefault();
+    
+    const defaultName = e.target.elements.recipeInput.defaultValue;
+    const name = e.target.elements.recipeInput.value.trim();
+    const ingredients = e.target.elements.ingredientsInput.value.trim();
+    const index = this.state.recipes.findIndex((recipe) => {
+      return recipe.name === defaultName;
+    });
+    
+    const recipe = {
+      name, 
+      ingredients,
+      visible: false,
+      editModalOpen: false
+    }
+
+    const stateCopy = Object.assign({}, this.state);
+    stateCopy.recipes.splice(index, 1, recipe);
+    stateCopy.recipes.forEach((recipe) => {recipe.editModalOpen = false});
+    this.setState(() => (stateCopy))
 
   }
   render() {
@@ -85,6 +111,7 @@ export default class RecipeBookApp extends React.Component {
           handleEditRecipe={this.handleEditRecipe}
           handleDeleteRecipe={this.handleDeleteRecipe}
           openEditRecipeModal={this.openEditRecipeModal}
+          handleCloseEditModal={this.handleCloseEditModal}
         />
         <button 
           name='add-recipe' 
@@ -96,11 +123,6 @@ export default class RecipeBookApp extends React.Component {
           {...this.state} 
           handleCloseAdd={this.handleCloseAdd}
           addRecipe={this.addRecipe}
-        />
-        <EditRecipeModal
-          {...this.state}
-          handleCloseEditModal={this.handleCloseEditModal}
-          openEditRecipeModal={this.openEditRecipeModal}
         />
       </div>
     )

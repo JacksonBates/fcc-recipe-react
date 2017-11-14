@@ -21,6 +21,29 @@ export default class RecipeBookApp extends React.Component {
       }
     ]
   }
+
+  componentDidMount() {
+    try {
+      const json = localStorage.getItem('recipes');
+      const recipes = JSON.parse(json);
+      if (recipes) {
+        this.setState(() => ({
+          addModalOpen: false, 
+          recipes
+        }));
+      }  
+    } catch (e) {
+      // Do nothing
+    }
+    
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.recipes.length !== this.state.recipes.length) {
+      const json = JSON.stringify(this.state.recipes);
+      localStorage.setItem('recipes', json);
+    }
+  }
+
   handleAdd = () => {
     this.setState(() => ({ addModalOpen: true }));
   }

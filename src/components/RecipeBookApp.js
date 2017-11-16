@@ -115,7 +115,7 @@ export default class RecipeBookApp extends React.Component {
     const recipe = {
       name, 
       ingredients,
-      visible: false,
+      visible: true,
       editModalOpen: false
     }
 

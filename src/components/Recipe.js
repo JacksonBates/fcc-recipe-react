@@ -2,6 +2,7 @@ import React from 'react';
 import EditRecipe from './EditRecipe';
 import DeleteRecipe from './DeleteRecipe';
 import EditRecipeModal from './EditRecipeModal';
+import Ingredients from './Ingredients';
 
 const Recipe = (props) => {
 return (
@@ -15,7 +16,7 @@ return (
       >
         {props.name}
       </button>
-      {props.visible && props.ingredients}
+      {props.visible && <Ingredients {...props} />}
       <div className="recipe--button-bar">
         {props.visible && <EditRecipe {...props} />}      
         {props.visible && <DeleteRecipe {...props} />}

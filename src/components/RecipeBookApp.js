@@ -10,7 +10,7 @@ export default class RecipeBookApp extends React.Component {
       {
         name: 'Chilli',
         ingredients: 'brown rice, minced beef, onions, chilli powder, jalapenos, too much cumin, cocoa powder (trust me), kidney beans, corn, sour cream, cerveza',
-        visible: false,
+        visible: false,  
         editModalOpen: false
       },
       {

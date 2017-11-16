@@ -1,3 +1,22 @@
+.recipe--button {
+  background-color: $choc;
+  border: 0;
+  border-bottom: 3px solid darken($choc, 10%);
+  color: $puff;
+  font-size: $m-size;
+  font-weight: bolder;
+  margin-left: $xxs-size;
+  margin-bottom: $xxs-size;
+  padding: $xxs-size $xs-size;
+  padding-bottom: 0;
+}
+
+.recipe--button-bar {
+  justify-content: flex-end;
+  border: none;
+  display: flex;
+}
+
 .recipe--name {
   align-content: left;
   background-color: $strawb;
@@ -8,8 +27,10 @@
   font-family: $cursive;
   font-size: $l-size;
   font-weight: bolder;
-  // line-height: $l-size;
+  line-height: $l-size;
   margin: 0;
   padding: $s-size 0 0 $s-size;
   width: 100%
 }
+
+

@@ -5,6 +5,7 @@ const DeleteRecipe = (props) => {
       <div>
         <button 
           // name={props.name} 
+          className="recipe--button"
           onClick={(e) => {
             // alert('delete pressed');
             props.handleDeleteRecipe(props.index);

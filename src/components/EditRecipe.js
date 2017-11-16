@@ -4,6 +4,7 @@ const EditRecipe = (props) => {
   return (
       <div>
         <button
+          className="recipe--button"
           onClick={(e) => {
             props.openEditRecipeModal(props.index);
           }

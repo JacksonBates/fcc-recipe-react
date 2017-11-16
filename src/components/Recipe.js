@@ -5,9 +5,10 @@ import EditRecipeModal from './EditRecipeModal';
 
 const Recipe = (props) => {
 return (
-    <div>
+    <div className="recipe">
       <button 
         name={props.name} 
+        className="recipe--name"
         onClick={(e) => {
           props.handleVisibility(props.index)
         }}

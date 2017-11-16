@@ -127,7 +127,7 @@ export default class RecipeBookApp extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="container">
         <Recipes 
           {...this.state} 
           handleVisibility={this.handleVisibility}

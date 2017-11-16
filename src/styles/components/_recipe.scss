@@ -1,0 +1,15 @@
+.recipe--name {
+  align-content: left;
+  background-color: $strawb;
+  border: 0;
+  border-bottom: 3px solid darken($strawb, 10%);
+  color: $choc;
+  display: flex;
+  font-family: $cursive;
+  font-size: $l-size;
+  font-weight: bolder;
+  // line-height: $l-size;
+  margin: 0;
+  padding: $s-size 0 0 $s-size;
+  width: 100%
+}

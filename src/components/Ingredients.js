@@ -7,7 +7,12 @@ const Ingredients = (props) => {
         {
           props.ingredients.split(',').map((ingredient, i) => {
             return (
-              <li key={i}>{ingredient}</li>
+              <li 
+                key={i}
+                className="recipe--list-item"
+              >
+                {ingredient}
+              </li>
             )
           })
         }

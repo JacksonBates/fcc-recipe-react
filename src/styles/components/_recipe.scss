@@ -17,6 +17,20 @@
   display: flex;
 }
 
+.recipe--list-item {
+  background-color: $blue;
+  color: darken($choc, 10%);
+  font-size: $m-size;
+  font-weight: bolder;
+  padding: $xs-size;
+  list-style-type: none;
+  margin: 0;
+}
+
+.recipe--list-item:nth-child(even) {
+  background-color: $creme;
+}
+
 .recipe--name {
   align-content: left;
   background-color: $strawb;

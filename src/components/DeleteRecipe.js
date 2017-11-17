@@ -2,7 +2,7 @@ import React from 'react';
 
 const DeleteRecipe = (props) => {
   return (
-      <div>
+      <div className="recipe--delete">
         <button 
           // name={props.name} 
           className="recipe--button"

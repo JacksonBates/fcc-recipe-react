@@ -5,16 +5,25 @@
   color: $puff;
   font-size: $m-size;
   font-weight: bolder;
-  margin-left: $xxs-size;
+  // margin-left: $xxs-size;
   margin-bottom: $xxs-size;
   padding: $xxs-size $xs-size;
   padding-bottom: 0;
+  width: 100%
 }
 
 .recipe--button-bar {
-  justify-content: flex-end;
+  justify-content: space-between;
   border: none;
   display: flex;
+}
+
+.recipe--edit {
+  width: 49%;
+}
+
+.recipe--delete {
+  width: 49%;
 }
 
 .recipe--list-item {

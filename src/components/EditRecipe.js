@@ -2,7 +2,7 @@ import React from 'react';
 
 const EditRecipe = (props) => {
   return (
-      <div>
+      <div className="recipe--edit">
         <button
           className="recipe--button"
           onClick={(e) => {

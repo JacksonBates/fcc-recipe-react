@@ -137,6 +137,7 @@ export default class RecipeBookApp extends React.Component {
           handleCloseEditModal={this.handleCloseEditModal}
         />
         <button 
+          className='container--add-recipe-button'
           name='add-recipe' 
           onClick={this.handleAdd}
         >

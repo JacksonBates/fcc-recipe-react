@@ -3,3 +3,16 @@
   margin: 0 auto;
   padding: 0 $m-size;
 }
+
+.container--add-recipe-button {
+  background-color: $choc;
+  border: 0;
+  border-bottom: 3px solid darken($choc, 10%);
+  color: $strawb;
+  font-family: $cursive;
+  font-size: $l-size;
+  font-weight: bolder;
+  margin-top: $xs-size;
+  padding: $xxs-size;
+  width: 100%;
+}

@@ -1,8 +1,8 @@
 .recipe--button {
-  background-color: $choc;
+  background-color: $steak;
   border: 0;
-  border-bottom: 3px solid darken($choc, 10%);
-  color: $puff;
+  border-bottom: 3px solid darken($steak, 10%);
+  color: $table;
   font-size: $m-size;
   font-weight: bolder;
   // margin-left: $xxs-size;
@@ -28,7 +28,7 @@
 
 .recipe--list-item {
   background-color: $blue;
-  color: darken($choc, 10%);
+  color: darken($steak, 10%);
   font-size: $m-size;
   font-weight: bolder;
   padding: $xs-size;
@@ -42,10 +42,10 @@
 
 .recipe--name {
   align-content: left;
-  background-color: $strawb;
+  background-color: $table;
   border: 0;
-  border-bottom: 3px solid darken($strawb, 10%);
-  color: $choc;
+  border-bottom: 3px solid darken($table, 10%);
+  color: $steak;
   display: flex;
   font-family: $cursive;
   font-size: $l-size;

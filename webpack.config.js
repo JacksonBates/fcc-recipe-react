@@ -18,7 +18,10 @@ module.exports = {
         'css-loader',
         'sass-loader'
       ]
-    }]
+    }, { 
+      test: /\.(png|jpg)$/,
+      loader: 'url-loader' 
+    }],
   }, 
   devtool: "cheap-module-eval-source-map",
   devServer: {

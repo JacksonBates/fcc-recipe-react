@@ -3,7 +3,8 @@ html {
 }
 
 body {
-  background-color: $puff;
+  // background-color: $puff;
+  background: url('../../public/bg-img.png') no-repeat center center fixed;;
   font-family: $sans;
 }
 

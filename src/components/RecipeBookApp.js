@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from './Header';
 import Recipes from './Recipes';
 import AddRecipeModal from './AddRecipeModal';
 import EditRecipeModal from './EditRecipeModal';
@@ -128,6 +129,7 @@ export default class RecipeBookApp extends React.Component {
   render() {
     return (
       <div className="container">
+        <Header />
         <Recipes 
           {...this.state} 
           handleVisibility={this.handleVisibility}

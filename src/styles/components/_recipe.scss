@@ -9,7 +9,7 @@
   margin-bottom: $xxs-size;
   padding: $xxs-size $xs-size;
   padding-bottom: 0;
-  width: 100%
+  width: 100%;
 }
 
 .recipe--button-bar {
@@ -27,7 +27,7 @@
 }
 
 .recipe--list-item {
-  background-color: $blue;
+  background-color: lighten($table, 20%);
   color: darken($steak, 10%);
   font-size: $m-size;
   font-weight: bolder;
@@ -37,7 +37,7 @@
 }
 
 .recipe--list-item:nth-child(even) {
-  background-color: $creme;
+  background-color: lighten($table, 10%);
 }
 
 .recipe--name {
@@ -46,6 +46,7 @@
   border: 0;
   border-bottom: 3px solid darken($table, 10%);
   color: $steak;
+  cursor: pointer;
   display: flex;
   font-family: $cursive;
   font-size: $l-size;

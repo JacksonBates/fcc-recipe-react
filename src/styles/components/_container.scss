@@ -8,7 +8,8 @@
   background-color: $lettuce;
   border: 0;
   border-bottom: 3px solid darken($lettuce, 10%);
-  color: darken($steak, 10%);
+  color: $dark-blue;
+  cursor: pointer;
   font-family: $cursive;
   font-size: $l-size;
   font-weight: bolder;

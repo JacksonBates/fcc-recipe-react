@@ -35,7 +35,15 @@ const AddRecipeModal = (props) => {
             className='modal__text-input'
             placeholder='Ingredients should be comma separated' 
           />
-          <button className='modal__add-button'>Add</button>
+          <button className='modal__confirm-button'>Add</button>
+          <button className='modal__reject-button' onClick={(e) => {
+            e.preventDefault;
+  
+            props.handleCloseAdd(props.index);
+            }}
+          >
+            Cancel
+          </button>
         </form>
       </div>
 

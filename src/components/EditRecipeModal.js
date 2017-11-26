@@ -6,31 +6,46 @@ const EditRecipeModal = (props) => {
     <Modal
       isOpen={props.recipes[props.index].editModalOpen}
       onRequestClose={props.handleCloseEditModal}
+      className='modal'
     >
-      <h3>Edit the recipe</h3>
-      <form onSubmit={props.handleEditRecipe}>
-        <label htmlFor='recipeInput'>Recipe</label><br />
-        <input 
-          name='recipeInput' 
-          type='text' 
-          placeholder='Recipe name'
-          defaultValue={props.recipes[props.index].name} /><br />
-        <label htmlFor='ingredientsInput'>Ingredients</label><br />
-        <input 
-          name='ingredientsInput' 
-          type='text' 
-          placeholder='Ingredients should be comma separated'
-          defaultValue={props.ingredients} /><br />
-        <button>Save edit</button>
-        <button onClick={(e) => {
-          e.preventDefault;
+      <h1 className='modal__title'>Edit the recipe</h1>
+      <div className='modal__body'>
+        <form onSubmit={props.handleEditRecipe}>
+          <label 
+            className='modal__label' 
+            htmlFor='recipeInput'
+          >
+            Recipe
+          </label>
+          <input 
+            name='recipeInput' 
+            className='modal__text-input'
+            type='text' 
+            placeholder='Recipe name'
+            defaultValue={props.recipes[props.index].name} />
+          <label 
+            className='modal__label' 
+            htmlFor='ingredientsInput'
+          >
+            Ingredients
+          </label>
+          <input 
+            name='ingredientsInput' 
+            className='modal__text-input'
+            type='text' 
+            placeholder='Ingredients should be comma separated'
+            defaultValue={props.ingredients} />
+          <button className='modal__confirm-button'>Save edit</button>
+          <button className='modal__reject-button' onClick={(e) => {
+            e.preventDefault;
 
-          props.handleCloseEditModal(props.index);
-          }}
-        >
-          Cancel edit
-        </button>
-      </form>
+            props.handleCloseEditModal(props.index);
+            }}
+          >
+            Cancel edit
+          </button>
+        </form>
+      </div>
 
     </Modal>
   )

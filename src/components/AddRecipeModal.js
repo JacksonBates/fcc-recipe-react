@@ -8,14 +8,34 @@ const AddRecipeModal = (props) => {
       onRequestClose={props.handleCloseAdd}
       className='modal'
     >
-      <h3 className='modal__title'>Add a recipe</h3>
+      <h1 className='modal__title'>Add a recipe</h1>
       <div className='modal__body'>
         <form onSubmit={props.addRecipe}>
-          <label htmlFor='recipeInput'>Recipe</label><br />
-          <input name='recipeInput' type='text' placeholder='Recipe name' /><br />
-          <label htmlFor='ingredientsInput'>Ingredients</label><br />
-          <input name='ingredientsInput' type='text' placeholder='Ingredients should be comma separated' /><br />
-          <button>Add</button>
+          <label 
+            className='modal__label'
+            htmlFor='recipeInput'
+          >
+            Recipe
+          </label>
+          <input 
+            name='recipeInput' 
+            type='text' 
+            className='modal__text-input'
+            placeholder='Recipe name' 
+          />
+          <label 
+            className='modal__label'
+            htmlFor='ingredientsInput'
+          >
+            Ingredients
+          </label>
+          <input 
+            name='ingredientsInput' 
+            type='text' 
+            className='modal__text-input'
+            placeholder='Ingredients should be comma separated' 
+          />
+          <button className='modal__add-button'>Add</button>
         </form>
       </div>
 

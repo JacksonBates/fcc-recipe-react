@@ -1,10 +1,10 @@
 .modal {
   background-color: $steak;
   color: white;
-  max-width: 50rem;
+  width: 80%;
+  max-width: 100rem;
   outline: none;
   padding: $l-size;
-  text-align: center;
 }
 
 .ReactModalPortal > div {
@@ -27,7 +27,11 @@
 }
 
 .modal__title {
+  color: $table;
+  font-family: $cursive;
+  font-size: $l-size;
   margin: 0 0 $m-size 0;
+  text-align: center;
 }
 
 .modal__body {
@@ -35,4 +39,32 @@
   font-weight: 300;
   margin: 0 0 $xl-size 0;
   word-break: break-all;
+}
+
+.modal__label {
+  font-weight: bolder;
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: $xxs-size 0;
+
+}
+
+.modal__text-input {
+  display: block;
+  width: 100%;
+}
+
+.modal__add-button {
+  background-color: $lettuce;
+  border: 0;
+  border-bottom: 3px solid darken($lettuce, 10%);
+  color: $dark-blue;
+  cursor: pointer;
+  font-family: $cursive;
+  font-size: $l-size;
+  font-weight: bolder;
+  padding: $xxs-size;
+  margin-top: $xs-size;
+  width: 100%;
 }

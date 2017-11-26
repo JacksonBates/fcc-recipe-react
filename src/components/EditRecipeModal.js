@@ -22,8 +22,10 @@ const EditRecipeModal = (props) => {
             className='modal__text-input'
             type='text' 
             placeholder='Recipe name'
-            defaultValue={props.recipes[props.index].name} />
-          <label 
+            defaultValue={props.recipes[props.index].name} 
+            required
+          />
+            <label 
             className='modal__label' 
             htmlFor='ingredientsInput'
           >
@@ -34,7 +36,9 @@ const EditRecipeModal = (props) => {
             className='modal__text-input'
             type='text' 
             placeholder='Ingredients should be comma separated'
-            defaultValue={props.ingredients} />
+            defaultValue={props.ingredients}
+            required
+          />
           <button className='modal__confirm-button'>Save edit</button>
           <button className='modal__reject-button' onClick={(e) => {
             e.preventDefault;

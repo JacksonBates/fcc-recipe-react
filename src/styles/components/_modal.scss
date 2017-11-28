@@ -53,6 +53,9 @@
 .modal__text-input {
   display: block;
   width: 100%;
+  -moz-box-sizing: content-box;
+  box-sizing: border-box;
+  
 }
 
 .modal__confirm-button {

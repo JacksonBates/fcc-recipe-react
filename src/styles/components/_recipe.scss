@@ -1,4 +1,4 @@
-.recipe--button {
+.recipe__button {
   background-color: $steak;
   border: 0;
   border-bottom: 3px solid darken($steak, 10%);
@@ -12,21 +12,21 @@
   width: 100%;
 }
 
-.recipe--button-bar {
+.recipe__button-bar {
   justify-content: space-between;
   border: none;
   display: flex;
 }
 
-.recipe--edit {
+.recipe__edit {
   width: 49%;
 }
 
-.recipe--delete {
+.recipe__delete {
   width: 49%;
 }
 
-.recipe--list-item {
+.recipe__list-item {
   background-color: lighten($table, 20%);
   color: darken($steak, 10%);
   font-size: $m-size;
@@ -37,11 +37,11 @@
   margin: 0;
 }
 
-.recipe--list-item:nth-child(even) {
+.recipe__list-item:nth-child(even) {
   background-color: lighten($table, 10%);
 }
 
-.recipe--name {
+.recipe__name {
   align-content: left;
   background-color: $table;
   border: 0;

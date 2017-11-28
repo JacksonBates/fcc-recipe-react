@@ -9,7 +9,7 @@ return (
     <div className="recipe">
       <button 
         name={props.name} 
-        className="recipe--name"
+        className="recipe__name"
         onClick={(e) => {
           props.handleVisibility(props.index)
         }}
@@ -17,7 +17,7 @@ return (
         {props.name}
       </button>
       {props.visible && <Ingredients {...props} />}
-      <div className="recipe--button-bar">
+      <div className="recipe__button-bar">
         {props.visible && <EditRecipe {...props} />}      
         {props.visible && <DeleteRecipe {...props} />}
       </div>

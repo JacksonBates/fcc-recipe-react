@@ -9,7 +9,7 @@ const Ingredients = (props) => {
             return (
               <li 
                 key={i}
-                className="recipe--list-item"
+                className="recipe__list-item"
               >
                 {ingredient}
               </li>

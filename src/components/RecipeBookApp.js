@@ -39,10 +39,8 @@ export default class RecipeBookApp extends React.Component {
     
   }
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.recipes.length !== this.state.recipes.length) {
       const json = JSON.stringify(this.state.recipes);
       localStorage.setItem('recipes', json);
-    }
   }
 
   handleAdd = () => {
